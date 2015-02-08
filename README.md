@@ -31,3 +31,7 @@ This bash script depends on notify-send command in the notify-osd package.
 ```
 sudo apt-get install notify-osd
 ```
+
+## Screenshot
+Here is an example screenshot of what the notifcation looks like
+![pingcheck screenshot](http://i.imgur.com/1KlKzJ4.png)
