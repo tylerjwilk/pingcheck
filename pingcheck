@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# Author: Tyler J Wilkinson
+# Url: https://github.com/tylerjwilk/pingcheck
+# Name: pingcheck
+# Description: A tool to monitor a network ip and alert when host is unreachable
+# Requires: libnotify, notify-send
+#
+
+# require at least one argument
+[ $# -eq 0 ] &&
+{
+    echo ""
+    echo "A tool to monitor a network ip and alert when host is unreachable"
+    echo "   Usage: $0 [network ip address] [network nickname]";
+    echo " Example: $0 192.168.1.1 Home"
+    echo ""
+    exit 1;
+}
+
+# vars
+TMP_FILE="/tmp/pingcheck-$1.tmp"
+MAX_FAILS=1
+SERVER=$1
+NICKNAME=$2
+
+# load tmp tile with fails count
+if [ -r $TMP_FILE ]; then
+    FAILS=`cat $TMP_FILE`
+else
+    FAILS=0
+fi
+
+# ping server
+ping -c 1 $SERVER >/dev/null 2>&1
+
+if [ $? -ne 0 ] ; then
+    FAILS=$[FAILS + 1]
+else
+    FAILS=0
+fi
+if [ $FAILS -gt $MAX_FAILS ]; then
+    notify-send -u critical "Network Offline" "$NICKNAME $SERVER network is offline or unreachable!" -i "/usr/share/icons/Humanity/status/48/dialog-error.svg" -c "network.error"
+fi
+
+# save fails to tmp file
+echo $FAILS > $TMP_FILE
