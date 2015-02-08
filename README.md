@@ -15,15 +15,19 @@ $ xhost +local:
 $ xhost
 ```
 
-
 The we need to update cron for the user this will run under
 
 ```
 $cron -e -u username
 ```
 
-
 Add this to your cron file
 ```
 * * * * * env DISPLAY=:0.0 /home/username/bin/pingcheck 192.168.1.1 HomeRouter 2>&1
+```
+
+## Dependencies
+This bash script depends on notify-send command in the notify-osd package.
+```
+sudo apt-get install notify-osd
 ```
