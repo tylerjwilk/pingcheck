@@ -1,7 +1,9 @@
 # pingcheck
+pingcheck is a bash script tool to monitor a network ip and alert when host is unreachable. 
+
 
 ## Why
-pingcheck is a bash script tool to monitor a network ip and alert when host is unreachable. My routers in my local area network need rebooted every so often. This tool can let you know what router needs rebooted. It can also be used for general network connectivity monitoring.
+My routers in my local area network need rebooted every so often. This tool can let you know what router needs rebooted. It can also be used for general network connectivity monitoring.
 
 
 ## Usage
