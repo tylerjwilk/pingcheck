@@ -25,5 +25,5 @@ $cron -e -u username
 
 Add this to your cron file
 ```
-* * * * * env DISPLAY=:0.0 /home/tyler/bin/pingcheck 192.168.1.1 HomeRouter 2>&1
+* * * * * env DISPLAY=:0.0 /home/username/bin/pingcheck 192.168.1.1 HomeRouter 2>&1
 ```
