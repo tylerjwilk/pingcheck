@@ -9,7 +9,7 @@ My routers in my local area network need rebooted every so often. This tool lets
 ## Usage
 ```
 Usage: ./pingcheck [network ip address] [network nickname]
-Example: ./pingcheck 192.168.1.1 Home"
+Example: ./pingcheck 192.168.1.1 Home
 ```
 
 ## Cron

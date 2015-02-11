@@ -20,7 +20,7 @@
 
 # vars
 TMP_FILE="/tmp/pingcheck-$1.tmp"
-MAX_FAILS=1
+MAX_FAILS=0
 SERVER=$1
 NICKNAME=$2
 
